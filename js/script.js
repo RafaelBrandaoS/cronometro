@@ -1,7 +1,9 @@
+var min = 00
 var mSec = 00
 var sec = 00
 var mostrarMSec = document.getElementById("msec")
 var mostrarSec = document.getElementById("sec")
+var mostrarMin = document.getElementById("min")
 var start = document.getElementById("start")
 var stop = document.getElementById("stop")
 var reset = document.getElementById("reset")
@@ -39,6 +41,16 @@ function contador() {
             mostrarSec.innerHTML = "0" + sec
         } else {
             mostrarSec.innerHTML = sec
+        }
+    }
+
+    if (sec >= 60) {
+        min++
+        sec = 0
+        if (min <= 9) {
+            mostrarMin.innerHTML = "0" + min
+        } else {
+            mostrarMin.innerHTML = min
         }
     }
 }
